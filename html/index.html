@@ -1,0 +1,96 @@
+<!Doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preload" href="../photos/git-hub-light.png" as="image">
+<title>My portfolio</title>
+</head>
+<body>
+
+<header id="header">
+    <!-- GitHub Button -->
+    <div id="github-icon-wrapper">
+        <a href="https://github.com/nsferattu" id="github-link" class="icon-btn" target="_blank" rel="noopener noreferrer">
+            <img src="" alt="GitHub" id="github-icon" class="header-icon">
+        </a>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div id="theme-toggle-wrapper">
+        <button id="theme-btn" class="icon-btn">
+            <img src="../photos/moon.png" alt="dark theme" id="theme-icon">
+        </button>
+    </div>
+
+    <h1>Artur Hryhoriev</h1>
+    <p>Wroclaw, Poland</p>
+</header>
+
+<section id="about">
+    <h2>About me</h2>
+    <p>
+        I am a student programmer with a strong interest in front-end development, interface design, and learning new things. I enjoy creating clean, responsive, and user-friendly interfaces. I can work independently with focus and discipline, but I also enjoy teamwork, sharing knowledge, and open communication.
+
+        <br> I always strive to improve my skills and stay up to date with modern web technologies. I’m an honest, responsible, and detail-oriented person who values punctuality and a positive, energetic mindset. I am currently looking for an internship or a junior developer position to gain real-world experience and contribute to a motivated and collaborative team.</br>
+    </p>
+<!--    <button id="show-more-btn">Показати більше</button>-->
+    <div class="blur-wrapper" onclick="revealImage(this)">
+        <img src="../photos/artur.png" alt="Blurred photo" class="blurred-photo" width="300" height="300" />
+        <div class="tap-to-view"></div>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <p>WSB Merito University of Wroclaw</p>
+    <p>Bachelor’s Degree in Computer Science</p>
+    <p>October 2023 - Present</p>
+    <p>Relevant coursework: Mobile Development, Algorithms and Data Structures, Web Development, Databases</p>
+</section>
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <p>Basic to intermediate knowledge of Python, HTML, CSS and JavaScript</p>
+    <p>Frameworks & Libraries: Some experience with React.js</p>
+    <p>DDatabases: Basic skills in SQL Server Management</p>
+    <p>Tools & Environments: Comfortable using Git, GitHub, Docker, VS Code, PyCharm, WebStorm, and Linux</p>
+</section>
+
+<section id="languages">
+    <h2>Languages</h2>
+    <ul>
+        <li>Ukrainian - Native</li>
+        <li>English - Intermediate(B1)</li>
+        <li>Polish - Upper-Intermediate(B2)</li>
+        <li>Russian - Advanced (C1)</li>
+    </ul>
+</section>
+
+<section id="contacts">
+    <h2>Contacts</h2>
+    <p>Email: <a href="mailto:bb1sixx@gmail.com">bb1sixx@gmail.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100094914133579&locale=pl_PL">Посилання на фейсбук</a></p>
+    <p>Github: <a href="https://github.com/nsferattu">nsferattu</a></p>
+    <p>Telephone: +48 726 858 365</p>
+</section>
+
+<h6>Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. U. z 2018 r. poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).</h6>
+
+
+<script src="/js/script.js"></script>
+<div class="side-nav">
+    <ul class="nav-links">
+        <li><a href="#header" class="nav-link active">Mane</a></li>
+        <li><a href="#about" class="nav-link">About me</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#languages" class="nav-link">Languages</a></li>
+        <li><a href="#contacts" class="nav-link">Contacts</a></li>
+    </ul>
+</div>
+<a href="https://github.com/your-username" class="github-icon" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-github"></i>
+</a>
+</body>
+</html>
