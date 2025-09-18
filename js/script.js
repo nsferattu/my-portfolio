@@ -22,10 +22,10 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     const IMAGES = {
-        SUN: '../photos/sun.png',
-        MOON: '../photos/moon.png',
-        GITHUB_DARK: '../photos/github-mark.png',
-        GITHUB_LIGHT: '../photos/github-mark-white.png'
+        SUN: 'photos/sun.png',
+        MOON: 'photos/moon.png',
+        GITHUB_DARK: 'photos/github-mark.png',
+        GITHUB_LIGHT: 'photos/github-mark-white.png'
     };
 
     const themeBtn = document.getElementById("theme-btn");
@@ -35,7 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!themeBtn || !themeIcon || !githubIcon) {
         console.error('Required elements not found');
     } else {
-        // Ініціалізація теми
         const savedTheme = localStorage.getItem("theme") || THEME.LIGHT;
 
         if (savedTheme === THEME.DARK) {
@@ -49,22 +48,21 @@ window.addEventListener('DOMContentLoaded', () => {
             githubIcon.src = IMAGES.GITHUB_DARK;
         }
 
-        // Обробник кліку для перемикання теми
+        // theme changer
         themeBtn.addEventListener("click", () => {
             document.body.classList.toggle("dark-theme");
             const isDarkTheme = document.body.classList.contains("dark-theme");
 
-            // Оновлення даних теми
+            // updating data theme
             localStorage.setItem("theme", isDarkTheme ? THEME.DARK : THEME.LIGHT);
 
-            // Оновлення іконки теми
+            // updating icon theme
             themeIcon.src = isDarkTheme ? IMAGES.SUN : IMAGES.MOON;
             themeIcon.alt = isDarkTheme ? "Light theme" : "Dark theme";
 
-            // Оновлення GitHub іконки
+            // updating github icon
             githubIcon.src = isDarkTheme ? IMAGES.GITHUB_LIGHT : IMAGES.GITHUB_DARK;
 
-            // Додатковий ефект для візуальної підтвердження зміни
             githubIcon.style.transform = 'scale(1.2)';
             setTimeout(() => {
                 githubIcon.style.transform = 'scale(1)';
@@ -78,9 +76,9 @@ window.addEventListener('DOMContentLoaded', () => {
 function updateGitHubIcon() {
     const githubIcon = document.getElementById('github-icon');
     if (document.body.getAttribute('data-theme') === 'dark') {
-        githubIcon.src = "../photos/github-hub-dark.png";
+        githubIcon.src = "photos/github-hub-dark.png";
     } else {
-        githubIcon.src = "../photos/github-hub-light.jpg";
+        githubIcon.src = "photos/github-hub-light.jpg";
     }
 }
 
@@ -102,7 +100,7 @@ let lastScrollTime = 0;
 const optimizedAnimateOnScroll = () => {
     const now = Date.now();
 
-    // Throttle to ~60fps and prevent overlap
+    // Throttle to 60fps
     if (isAnimating || (now - lastScrollTime < 16)) return;
 
     isAnimating = true;
@@ -158,11 +156,9 @@ const setupIntersectionObserver = () => {
     });
 };
 
-// Initialize based on browser support
 if ('IntersectionObserver' in window) {
     setupIntersectionObserver();
 } else {
-    // Fallback to scroll event with proper cleanup
     const scrollHandler = () => {
         optimizedAnimateOnScroll();
         updateActiveNav();
@@ -171,7 +167,6 @@ if ('IntersectionObserver' in window) {
     window.addEventListener('scroll', scrollHandler);
     window.addEventListener('load', scrollHandler);
 
-    // Cleanup function if needed
     window.cleanupAnimations = () => {
         window.removeEventListener('scroll', scrollHandler);
         window.removeEventListener('load', scrollHandler);
